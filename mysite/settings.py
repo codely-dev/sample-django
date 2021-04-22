@@ -28,8 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "True")
-DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
@@ -40,7 +39,6 @@ INSTALLED_APPS = [
     "locations",
     "news",
     "events",
-    "profiles",
     "pwa",
     "polls.apps.PollsConfig",
     "django.contrib.admin",
@@ -86,7 +84,7 @@ WSGI_APPLICATION = "mysite.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-if os.getenv("DEVELOPMENT_MODE") != False:
+if "DEVELOPMENT_MODE" != "False":
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
