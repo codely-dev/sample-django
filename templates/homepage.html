@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock title %}
+
+{% block header %}Home{% endblock header %}
+
+{% block content %}
+
+<div class="main-content container-fluid">
+    <h2>Willkommen bei der Web App von Freewings</h2>
+    <p>Bitte wähle dein Betriebssystem</p>
+    <form action="/android">
+        <input type="submit" value="Android" />
+    </form>
+    <form action="/ios">
+        <input type="submit" value="iOS" />
+    </form>
+    <form action="/windows10">
+        <input type="submit" value="Windows 10" />
+    </form>
+    
+</div>
+{% endblock content %}

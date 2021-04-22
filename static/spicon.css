@@ -1,0 +1,36 @@
+.svg-inline--fa {
+    vertical-align: middle !important;
+}
+
+.fa-fw, .svg-inline--fa.fa-fw {
+    width: 24px;
+    max-height: 32px;
+}
+
+.fa-xs {
+    font-size: 12px;
+}
+
+.fa-sm {
+    font-size: 16px;
+}
+
+.fa-lg {
+    font-size: 24px;
+}
+
+.fa-2x {
+    font-size: 32px;
+}
+
+.fa-3x {
+    font-size: 40px;
+}
+
+.fa-5x {
+    font-size: 48px;
+}
+
+.fa-drilldown {
+    margin-left: 8px;
+}

@@ -1,0 +1,400 @@
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+.navbar-inverse {
+    background-color: rgb(90, 218, 207);
+}
+
+footer {
+    background-color: #f2f2f2;
+    padding: 25px;
+}
+
+body {
+    background: #F5F6F8;
+    font-family: 'Inter', sans-serif;
+}
+
+.event_time {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.67px;
+    color: #555555;
+    text-align: left;
+}
+
+.event_type {
+    font-weight: 600;
+    color: #333;
+    letter-spacing: -0.92px;
+    text-align: left;
+    font-size: 22px;
+}
+
+.team {
+    font-weight: 600;
+    font-size: 16px;
+    color: #555555;
+    letter-spacing: -0.67px;
+    text-align: left;
+}
+
+.event_location {
+    font-weight: 500;
+    font-size: 14px;
+    color: #555555;
+    letter-spacing: -0.58px;
+    text-align: left;
+}
+
+hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    border-top: 1px solid #979797;
+}
+
+
+:root {
+    --grey: #3b434d;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+}
+
+.sidebar {
+    width: 230px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: var(--grey);
+}
+
+.sidebar-brand {
+    height: 60px;
+    padding: 2rem;
+    background: #2c323a;
+    color: #fff;
+}
+
+.sidebar-menu li span {
+    width: 100%;
+    padding-left: 3rem;
+    font-size: 14px;
+    color: #e6e8eb;
+}
+
+.sidebar-menu li {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.sidebar-menu li:hover {
+    background: #2c323a;
+}
+
+.sidebar-menu li:active {
+    background: #0072e0;
+}
+
+.sidebar span {
+    font-weight: 500;
+    font-size: 12px;
+    color: #87939C;
+    padding-left: 2rem;
+}
+
+.sidebar-menu a {
+    display: block;
+}
+
+.sidebar .section-title {
+    margin-bottom: 14px;
+}
+
+.main-content {
+    margin-left: 230px;
+}
+
+
+header {
+    height: 60px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 230px;
+    padding: 2rem;
+    z-index: 100;
+}
+
+header h1 {
+    font-size: 14px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.user-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.user-name {
+    margin-right: 1rem;
+}
+
+.user-image {
+    border: 1px solid #cfd1d4;
+    background: #e6e8eb;
+    height: 35px;
+    width: 35px;
+    line-height: auto;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.user-image span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+
+
+.burger {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+
+.news-image img {
+    width: 100%;
+    max-width: 600px;
+}
+
+.news-content {
+    padding: 20px;
+}
+
+.news-meta {
+    margin-top: 20px;
+}
+
+.news-meta:before {
+    content: "";
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: url('/assets/icons/datum.svg'), no-repeat 0 0;
+    background-size: contain;
+    margin-right: 10px;
+}
+
+
+
+.article {
+    margin-bottom: 1.5rem;
+}
+
+.article {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .625rem;
+}
+
+.article-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 2rem;
+}
+
+.article-img-top {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.article-img-top {
+    flex-shrink: 1;
+    width: 100%;
+}
+
+.meta {
+    font-weight: 600;
+}
+
+.text-muted {
+    color: #adb5bd !important;
+}
+
+.article h4 {
+    font-weight: 600;
+}
+
+.read-more {
+    font-weight: 600;
+}
+
+.front-page-placeholder {
+    border-radius: 4px;
+    margin-top: 24px;
+    box-shadow: inset 0 0 0 2px rgb(0 0 0 / 8%);
+    padding: 48px 16px;
+    text-align: center;
+    flex-direction: column;
+}
+
+
+.comments {
+    list-style: none;
+    padding-left: 0;
+}
+
+.comments .comment:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+.avatar {
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+
+
+.event-comments {
+    border-radius: 4px;
+    margin-top: 24px;
+    box-shadow: inset 0 0 0 2px rgb(0 0 0 / 8%);
+    padding: 25px;
+    flex-direction: column;
+}
+
+.event-comments h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.comment-content {
+    font-size: 15px;
+    color: #495057;
+}
+
+.tile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1 100%;
+}
+
+.tile-title {
+    font-size: 17px;
+    color: #a8a8a8;
+    font-weight: 600;
+    margin-bottom: -8px;
+}
+
+.tile-body {
+    flex: 1 1 auto;
+}
+
+.tile-body {
+    border-radius: 4px;
+    margin-top: 24px;
+    box-shadow: inset 0 0 0 2px rgb(0 0 0 / 8%);
+    text-align: center;
+    flex-direction: column;
+    background: #fff;
+}
+
+.tile-body img {
+    max-width: 100%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.tile-img-top {
+    padding: 2px 2px 0px 2px;
+}
+
+.tile-content {
+    font-size: 15px;
+    color: #495057;
+    font-weight: 500;
+    padding: 25px;
+    text-align: left;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    word-break: break-word;
+}
+
+.route {
+    border-radius: 4px;
+    margin-top: 24px;
+    box-shadow: inset 0 0 0 2px rgb(0 0 0 / 8%);
+    text-align: center;
+    flex-direction: column;
+}
+
+.location-image {
+    width: 100%;
+    object-fit: cover;
+    height: 400px;
+}
+
+
+
+#id_password, #id_username {
+    border-width: 1px;
+    border-top-color: #bdc0c7;
+    box-shadow: none;
+    padding: 10px 12px;
+    font-size: 1.1538rem;
+    transition: none;
+    height: 3.692rem;
+    display: block;
+    width: 100%;
+    height: 3.692rem;
+    padding: 0.7692rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.428571;
+    color: #404040;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #d5d8de;
+    border-radius: 2px;
+}
+
+
+#id_focus:focus, #id_username:focus {
+    color: #404040;
+    background-color: #fff;
+    border-color: #4285f4;
+    outline: 0;
+    box-shadow: 0 0 0 0.15rem transparent;
+}
