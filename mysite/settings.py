@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "locations",
     "news",
     "events",
+    "profiles",
     "pwa",
     "polls.apps.PollsConfig",
     "django.contrib.admin",
