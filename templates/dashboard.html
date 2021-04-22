@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock title %}
+
+{% block header %}Dashboard{% endblock header %}
+
+{% block content %}
+
+<div class="main-content container-fluid">
+    {% if events %}
+    <h2>Events</h2>
+    <div class="row">
+        {% for event in events %}
+        {% include 'events/event_containers.html' %}
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% if articles %}
+    <h2>News</h2>
+    <div class="row">
+        {% for article in articles %}
+        {% include 'news/article_containers.html' %}
+        {% endfor %}
+    </div>
+    {% endif %}
+{% endblock content %}

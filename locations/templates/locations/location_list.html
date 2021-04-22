@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% block title %}Locations{% endblock title %} {% block sidenav %} {% for page in page_list %}
+<li>
+    <a href="{{ page.permalink }}">{{ page.title }}</a>
+</li>
+{% endfor %} {% endblock sidenav %} {% block header %}Locations{% endblock header %} {% block content %}
+
+<div class="main-content container-fluid">
+    <div class="row">
+        {% for location in all_locations %}
+        <div class="col-md-4 col-sm-6">
+            <div class="list event">
+                <div class="panel" id="event-training-24137697">
+                    <div>
+                        <div class="panel-heading ">
+                            <a class="event-header-border" href="{{ location.id }}"></a>
+
+                            <div class="panel-heading-text">
+                                <div class="panel-title">{{ location.title }}</div>
+                            </div>
+                            <div class="panel-drilldown">
+                                <svg id="w17" class="svg-inline--fa fa-drilldown fa-w-8 fa-sm" style="color: #FFFFFF;" aria-hidden="true" focusable="false" data-prefix="sp" data-icon="drilldown" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 512" data-fa-i2svg="">
+                                    <path fill="currentColor" d="M7.02943704,431.029437 C-2.34314568,440.402019 -2.34314568,455.597981 7.02943704,464.970563 C16.4020201,474.343146 31.5979798,474.343146 40.9705628,464.970563 L232.970563,272.970563 C242.343146,263.59798 242.343146,248.40202 232.970563,239.029437 L40.9705628,47.029437 C31.5979798,37.6568543 16.4020201,37.6568543 7.02943704,47.029437 C-2.34314568,56.4020201 -2.34314568,71.5979798 7.02943704,80.9705628 L182.058874,256 L7.02943704,431.029437 Z">
+                                    </path>
+                                </svg>
+                                <!-- <i id="w17" class="fa-drilldown sp fa-sm" style="color: #FFFFFF;"></i> -->
+                            </div>
+                        </div>
+                        <div class="location-content">
+                            <img src="{{ location.image.url }}" class="location-image">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
