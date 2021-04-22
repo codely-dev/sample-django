@@ -1,0 +1,155 @@
+{% extends "base.html" %} {% block title %}{{ page.title }}{% endblock title %} {% block sidenav %} {% for page in page_list %}
+<li>
+    <a href="{{ page.permalink }}">{{ page.title }}</a>
+</li>
+
+{% block header %}User Profile{% endblock header %}
+
+{% endfor %} {% endblock sidenav %} {% block content %}
+<div class="location-head">
+    <div class="no-tabbar" style="
+    padding: 40px 0px;
+">
+        <div class="user-profile">
+
+            <div class="user-photo">
+                <div class="user-photo-container">
+                    <div class="user-icon">
+                        <div style="width:96px; height:96px; position: relative; overflow: hidden; border-radius:50%; background-color: #ffffff; flex-shrink: 0">
+                            {% if profile.image %}
+                            <img src="{{ profile.image.url }}" alt="" style="left:0px; top:0px; width:96px; height:96px; vertical-align: middle; position: absolute">
+                            {% else %}
+                            <img src="//assets.spielerplus.de/assets/1c244f942e14cfa172fb511a4fb9cc3a/images/user/200x200/default.svg" alt="" style="left:0px; top:0px; width:96px; height:96px; vertical-align: middle; position: absolute">
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="user-name">{{ profile.user.first_name }} {{ profile.user.last_name }}</div>
+        <div class="user-position">
+            {% now "Y-m-d" as todays_date %}
+            {% if profile.subscriptionType and profile.subscriptionEnd|date:"Y-m-d" > todays_date %}
+            Ausbildungspaket: {{ profile.subscriptionType }}
+            {% endif %}
+        </div>
+        <div class="user-role">
+            {% if profile.practiceExam %}
+            <div class="user-role-item" style="background-color:#FFFFFF; color:#767676; border:1.5px solid rgba(0,0,0,0.08)">Brevetiert</div>
+            {% else %}
+            <div class="user-role-item" style="background-color:#FFFFFF; color:#767676; border:1.5px solid rgba(0,0,0,0.08)">Schüler</div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<div class="main-content container-fluid">
+    <div class="content">
+
+        <div class="event-overview">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div id="anchor-assignments"></div>
+                    <div class="last-week text-left">Beschreibung
+                        <!-- <a class="pull-right green" href="/training/assignments?id=24150355">
+                                <b>Hinzufügen</b>
+                                <svg id="w8"
+                                    class="svg-inline--fa fa-plus fa-w-16 fa-fw fa-xs"
+                                    style="margin-left: 8px; color: #44AD34;" aria-hidden="true" focusable="false"
+                                    data-prefix="sp" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 512 512" data-fa-i2svg="">
+                                    <path fill="currentColor"
+                                        d="M213.333333,213.333333 L213.333333,42.6666667 C213.333333,19.1025173 232.435851,0 256,0 C279.564149,0 298.666667,19.1025173 298.666667,42.6666667 L298.666667,213.333333 L469.333333,213.333333 C492.897483,213.333333 512,232.435851 512,256 C512,279.564149 492.897483,298.666667 469.333333,298.666667 L298.666667,298.666667 L298.666667,469.333333 C298.666667,492.897483 279.564149,512 256,512 C232.435851,512 213.333333,492.897483 213.333333,469.333333 L213.333333,298.666667 L42.6666667,298.666667 C19.1025173,298.666667 0,279.564149 0,256 C0,232.435851 19.1025173,213.333333 42.6666667,213.333333 L213.333333,213.333333 Z">
+                                    </path>
+                                </svg>
+                            </a> -->
+                        <!-- <i id="w8" class="fa-plus sp fa-fw fa-xs" style="margin-left: 8px; color: #44AD34;"></i> -->
+                    </div>
+                    <div class="front-page-placeholder">
+                        <div class="front-page-placeholder-label">{% now "D M Y H T " %}</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="education">
+                <div class="last-week text-left">Ausbildungsdetails</div>
+                <div class="user-overview">
+                    <div class="content text-center">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6">
+                                <medium class="light"><b>Anzahl Höhenflüge</b></medium>
+                                <p class="dark">23</p>
+                                <hr>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <medium class="light"><b>Theorieprüfung</b></medium>
+                                <p class="dark">{{ profile.theoryExam }}</p>
+                                <hr>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <medium class="light"><b>Praktische Prüfung</b></medium>
+                                <p class="dark">{{ profile.practiceExam }}</p>
+                                <hr>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <medium class="light"><b>Ausbildungspaket</b></medium>
+                                <p class="dark">{{ profile.subscriptionType }}</p>
+                                <hr>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <medium class="light"><b>Ausbildungsstart</b></medium>
+                                <p class="dark">{{ profile.subscriptionStart }}</p>
+                                <hr>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <medium class="light"><b>Ausbildungsende</b></medium>
+                                <p class="dark">{{ profile.subscriptionEnd }}</p>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="education">
+                <div class="last-week text-left">Personendetails</div>
+                    <div class="user-overview">
+                    <div class="content text-center">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6">
+                                <medium class="light"><b>Geburtstag</b></medium>
+                                <p class="dark">{{ profile.birth_date }}</p>
+                                <hr>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <medium class="light"><b>Adresse</b></medium>
+                                <p class="dark">Nein</p>
+                                <hr>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <medium class="light"><b>Mitglied seit</b></medium>
+                                <p class="dark">Nein</p>
+                                <hr>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <medium class="light"><b>E-Mailadresse</b></medium>
+                                <p class="dark">giacomo.buetler@codely.ch</p>
+                                <hr>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <medium class="light"><b>Telefon</b></medium>
+                                <p class="dark">079 594 1732</p>
+                                <hr>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <medium class="light"><b>Versicherungs-Nr.</b></medium>
+                                <p class="dark">Nein</p>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

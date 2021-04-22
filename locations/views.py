@@ -15,7 +15,6 @@ class LocationList(LoginRequiredMixin, ListView):
 
     def get_context_data(self, **kwargs):
         context = super(LocationList, self).get_context_data(**kwargs)
-        context['page_list'] = Page.objects.all()
         return context
 
 class LocationView(LoginRequiredMixin, DetailView):
@@ -25,5 +24,4 @@ class LocationView(LoginRequiredMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(LocationView, self).get_context_data(**kwargs)
-        context['page_list'] = Page.objects.all()
         return context

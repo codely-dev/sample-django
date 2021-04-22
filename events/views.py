@@ -31,7 +31,7 @@ def list(request):
         #Event Abmeldung
         if participate == "0":
             event.participants.remove(request.user)
-        return HttpResponseRedirect('/events')
+        return HttpResponseRedirect('/events/')
 
 @login_required(login_url=reverse_lazy('login'))
 def detail(request, pk):
