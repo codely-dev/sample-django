@@ -15,9 +15,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.conf.urls import url
+from django.views.generic import TemplateView
+from .views import dashboard, homepage, Register
+
+#Bilder
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
-    path("polls/", include("polls.urls")),
-    path("admin/", admin.site.urls),
-    path("", include("frontpage.urls")),
-]
+    path('admin/', admin.site.urls),
+    path('locations/', include('locations.urls')),
+    path('events/', include('events.urls')),
+    path('profile/', include('profiles.urls')),
+    path('news/', include('news.urls')),
+    path('dashboard/', dashboard),
+    path('register/success/', TemplateView.as_view(template_name="registration/success.html"), name='register-success',),
+    path('register/', Register.as_view(), name='register'),
+    path('', include('django.contrib.auth.urls')),
+    path('', include('pwa.urls')),
+    #path('', include('pages.urls')),
+    path('', homepage),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
