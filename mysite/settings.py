@@ -32,7 +32,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 
 # BEI DEPLOYMENT ANPASSEN!
 ###########################
-DEBUG = True
+DEBUG = False
 DEVELOPMENT_MODE = False
 ##########################
 
@@ -145,3 +145,35 @@ STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
+#PWA Webmanifest
+PWA_APP_NAME = 'Codely Planner'
+PWA_APP_DESCRIPTION = "Die Koordinationsapp"
+PWA_APP_START_URL = '/events'
+PWA_APP_ICONS = [
+    { 'src': '/static/pwa/app_icon.png',
+    'sizes': '512x512'
+    }
+]
+PWA_APP_SPLASH_SCREEN = [
+    {
+        'src': '/static/images/icons/splash-640x1136.png',
+        'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
+    }
+]
+PWA_APP_LANG = 'de-CH'
+PWA_SERVICE_WORKER_PATH = 'static/pwa/serviceworker.js'
+
+# PWA_APP_THEME_COLOR = '#0A0302'
+# PWA_APP_BACKGROUND_COLOR = '#ffffff'
+# PWA_APP_DISPLAY = 'standalone'
+# PWA_APP_SCOPE = '/'
+# PWA_APP_ORIENTATION = 'any'
+# PWA_APP_STATUS_BAR_COLOR = 'default'
+# PWA_APP_ICONS_APPLE = [ { 'src': '/static/images/my_apple_icon.png', 'sizes': '160x160' } ]
+# PWA_APP_DIR = 'ltr'
+
+#ManyToMany PopUp was denied:
+X_FRAME_OPTIONS = 'ALLOWALL'
+XS_SHARING_ALLOWED_METHODS = ['POST','GET','OPTIONS', 'PUT', 'DELETE']
