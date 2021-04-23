@@ -1,3 +1,20 @@
+# Hinweise
+1. Ordner auf lokale Maschine klonen
+2. virtuelle Umgebung einrichten
+    a) PowerShell im Ordner öffnen
+    b) `python -m venv venv` eingeben, um Umgebung zu erstellen
+    c) `venv\Scripts\activate` eingeben, um Umgebung zu verwenden
+    c) `pip install -r requirements.txt` eingeben, um Pakete zu installieren
+3. Umgebungsvariablen einrichten
+    a) .env-Datei anlegen
+    b) `DEBUG=True` in die erste Zeile
+    c) `DEVELOPMENT_MODE=True` in die zweite Zeile
+4. Server erstmalig starten
+    a) `python manage.py makemigrations` eingeben, um fehlende DB-Migrationen zu erstellen
+    b) `python manage.py migrate` eingeben, um die Migrationen durchzuführen (evtl. Schritt a+b wiederholen)
+    c) `python manage.py createsuperuser` eingeben, um admin-Account zu erstellen
+    d) `python manage.py runserver` eingeben, um den Server zu starten
+
 # Getting Started #
 
 These steps will get this sample Django application running for you using DigitalOcean.
