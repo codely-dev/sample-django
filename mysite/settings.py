@@ -14,8 +14,10 @@ import os
 import sys
 import dj_database_url
 from urllib.parse import urlparse
+from dotenv import load_dotenv
 
-from django.core.management.utils import get_random_secret_key
+#Variablen aus der virtuellen Umgebung laden (Bei lokalem Testing)
+load_dotenv()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,16 +27,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", '82oq8LO2xXW7tWeApG3tbaGzNyKLeNis')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = os.getenv("DEBUG", "False") == "True"
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
-# BEI DEPLOYMENT ANPASSEN!
-###########################
-DEBUG = False
-DEVELOPMENT_MODE = False
-##########################
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
@@ -89,6 +86,7 @@ WSGI_APPLICATION = "mysite.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
+DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 
 if DEVELOPMENT_MODE == True:
     DATABASES = {
